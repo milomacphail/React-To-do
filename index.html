@@ -24,6 +24,19 @@
           name: 'Milo',
           age: 31
         };
+
+        handleClick(e) {
+          console.log(e.target);
+        }
+
+        handleMouseOver(e) {
+          console.log(e.target, e.page);
+        }
+
+        handleCopy(e) {
+          console.log('Try being original for once!');
+        }
+
         render() {
           return (
             <div className="app-content">
@@ -32,6 +45,13 @@
                 My name is {this.state.name} and I am {this.state.age} years
                 old.
               </p>
+              <button onClick={this.handleClick}>
+                Log a message to the console.
+              </button>
+              <button onMouseOver={this.handleMouseOver}>
+                A hover over event
+              </button>
+              <p onCopy={this.handleCopy}>Copy me for an admonishment.</p>
             </div>
           );
         }
